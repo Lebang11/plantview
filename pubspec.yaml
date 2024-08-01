@@ -12,10 +12,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  camera: ^0.10.0+1
-  video_player: ^2.4.3
-  flutter_localizations:
-    sdk: flutter
+  camera: ^0.10.0
+ # Ensure this version is compatible with tflite_flutter
+  path_provider: ^2.0.8
+  image: ^3.0.1
+  flutter_tflite: ^1.0.1  
+  get: ^4.6.6
+  permission_handler: ^11.3.1
+
 
 dev_dependencies:
   flutter_test:
@@ -31,5 +35,4 @@ flutter:
   generate: true
 
   assets:
-    # Add assets from the images directory to the application.
-    - assets/images/
+    - assets/
