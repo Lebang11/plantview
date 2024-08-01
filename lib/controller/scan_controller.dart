@@ -9,6 +9,7 @@ import 'package:flutter_tflite/flutter_tflite.dart';
 class ScanController extends GetxController {
   late CameraController cameraController;
   late List<CameraDescription> cameras;
+  bool isPaused = false;
 
   var isCameraInitialized = false.obs;
   var cameraCount =0;
@@ -45,7 +46,7 @@ class ScanController extends GetxController {
                   
                     cameraController.startImageStream((image) {
                       cameraCount ++;
-                      if (cameraCount % 10 ==0) {
+                      if (cameraCount % 20 ==0) {
                         cameraCount = 0;
                         objectDetector(image);
                       }
@@ -58,6 +59,16 @@ class ScanController extends GetxController {
     } else {
       print("Permission denied");
     }
+  }
+
+  pausePreview() async {
+    await cameraController.pausePreview();
+    isPaused = true;
+  }
+
+  startPreview( ) async {
+    await cameraController.resumePreview();
+    isPaused = false;
   }
 
   initTflite() async {
