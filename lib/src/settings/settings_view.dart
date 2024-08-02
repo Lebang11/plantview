@@ -1,19 +1,45 @@
+/**
+ * Import the Flutter Material library for building Material Design UI
+ */
 import 'package:flutter/material.dart';
 
+/**
+ * Import the SettingsController class for managing user settings
+ */
 import 'settings_controller.dart';
 
-/// Displays the various settings that can be customized by the user.
-///
-/// When a user changes a setting, the SettingsController is updated and
-/// Widgets that listen to the SettingsController are rebuilt.
+/**
+ * Displays the various settings that can be customized by the user.
+ * 
+ * When a user changes a setting, the SettingsController is updated and
+ * Widgets that listen to the SettingsController are rebuilt.
+ */
 class SettingsView extends StatelessWidget {
+  /**
+   * Constructor for the SettingsView class
+   * 
+   * @param key The key for this widget
+   * @param controller The SettingsController instance to use for managing user settings
+   */
   const SettingsView({super.key, required this.controller});
 
+  /**
+   * The route name for this view
+   */
   static const routeName = '/settings';
 
+  /**
+   * The SettingsController instance to use for managing user settings
+   */
   final SettingsController controller;
 
   @override
+  /**
+   * Build the UI for the SettingsView
+   * 
+   * @param context The build context for this widget
+   * @return The built UI
+   */
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
