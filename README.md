@@ -32,7 +32,7 @@ Getting Started
 1. Clone the repository
 
 bash
-git clone [https://github.com/username/my-flutter-app.git](https://github.com/Lebang11/plantview.git)
+git clone [NerdsThinkcode_ - plantview](https://github.com/Lebang11/plantview.git)
 
 2. Change directory
 
